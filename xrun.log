@@ -1,0 +1,134 @@
+xrun(64): 18.09-s011: (c) Copyright 1995-2019 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	18.09-s011: Started on Dec 03, 2025 at 15:22:59 CST
+xrun
+	-64bit
+	-gui
+	-access r
+	template_lab4.v
+	npc_lab4.v
+file: template_lab4.v
+	module worklib.PipelinedCPU:v
+		errors: 0, warnings: 0
+	module worklib.ALU_R:v
+		errors: 0, warnings: 0
+	module worklib.ALU_IR:v
+		errors: 0, warnings: 0
+	module worklib.MEM_I:v
+		errors: 0, warnings: 0
+	module worklib.MEM_S:v
+		errors: 0, warnings: 0
+	module worklib.BRANCH:v
+		errors: 0, warnings: 0
+	module worklib.JUMP:v
+		errors: 0, warnings: 0
+	module worklib.JALR:v
+		errors: 0, warnings: 0
+	module worklib.LUI:v
+		errors: 0, warnings: 0
+	module worklib.AUIPC:v
+		errors: 0, warnings: 0
+file: npc_lab4.v
+module PipelinedCPU(halt, clk, rst);
+                  |
+xmvlog: *W,RECOME (npc_lab4.v,24|18): recompiling design unit worklib.PipelinedCPU:v.
+	First compiled from line 26 of template_lab4.v.
+   RegFile RF(.AddrA(Rsrc1), .DataOutA(Rdata1), 
+                         |
+xmvlog: *E,DUPIMP (npc_lab4.v,74|25): Identifier 'Rsrc1', implicitly declared here, first as a wire, is subsequently redeclared.
+   reg [4:0] Rsrc1, Rsrc2; 
+                 |
+xmvlog: *E,DUPIDN (npc_lab4.v,91|17): identifier 'Rsrc1' previously declared [12.5(IEEE)].
+	      .AddrB(Rsrc2), .DataOutB(Rdata2), 
+	                 |
+xmvlog: *E,DUPIMP (npc_lab4.v,75|18): Identifier 'Rsrc2', implicitly declared here, first as a wire, is subsequently redeclared.
+   reg [4:0] Rsrc1, Rsrc2; 
+                        |
+xmvlog: *E,DUPIDN (npc_lab4.v,91|24): identifier 'Rsrc2' previously declared [12.5(IEEE)].
+            .DataAddr(MEMDataAddr), .DataSize(MemSize), .DataIn(MEMStoreData), .DataOut(DataWord), .WE(MemWrEn), .CLK(clk));
+                                |
+xmvlog: *E,DUPIMP (npc_lab4.v,72|32): Identifier 'MEMDataAddr', implicitly declared here, first as a wire, is subsequently redeclared.
+   reg [`WORD_WIDTH-1:0] MEMRWrdata, MEMDataAddr, MEMStoreData;
+                                               |
+xmvlog: *E,DUPIDN (npc_lab4.v,182|47): identifier 'MEMDataAddr' previously declared [12.5(IEEE)].
+            .DataAddr(MEMDataAddr), .DataSize(MemSize), .DataIn(MEMStoreData), .DataOut(DataWord), .WE(MemWrEn), .CLK(clk));
+                                                                           |
+xmvlog: *E,DUPIMP (npc_lab4.v,72|75): Identifier 'MEMStoreData', implicitly declared here, first as a wire, is subsequently redeclared.
+   reg [`WORD_WIDTH-1:0] MEMRWrdata, MEMDataAddr, MEMStoreData;
+                                                             |
+xmvlog: *E,DUPIDN (npc_lab4.v,182|61): identifier 'MEMStoreData' previously declared [12.5(IEEE)].
+	      .AddrW(Rdst), .DataInW(RWrdata), .WenW(RWrEn), .CLK(clk));
+	                                   |
+xmvlog: *E,DUPIMP (npc_lab4.v,76|36): Identifier 'RWrdata', implicitly declared here, first as a wire, is subsequently redeclared.
+   reg [`WORD_WIDTH-1:0] RWrdata;
+                               |
+xmvlog: *E,DUPIDN (npc_lab4.v,244|31): identifier 'RWrdata' previously declared [12.5(IEEE)].
+	      .AddrW(Rdst), .DataInW(RWrdata), .WenW(RWrEn), .CLK(clk));
+	                                                 |
+xmvlog: *E,DUPIMP (npc_lab4.v,76|50): Identifier 'RWrEn', implicitly declared here, first as a wire, is subsequently redeclared.
+   reg RWrEn;
+           |
+xmvlog: *E,DUPIDN (npc_lab4.v,245|11): identifier 'RWrEn' previously declared [12.5(IEEE)].
+	      .AddrW(Rdst), .DataInW(RWrdata), .WenW(RWrEn), .CLK(clk));
+	                |
+xmvlog: *E,DUPIMP (npc_lab4.v,76|17): Identifier 'Rdst', implicitly declared here, first as a wire, is subsequently redeclared.
+   reg [4:0] Rdst;
+                |
+xmvlog: *E,DUPIDN (npc_lab4.v,246|16): identifier 'Rdst' previously declared [12.5(IEEE)].
+	module worklib.PipelinedCPU:v
+		errors: 14, warnings: 1
+module ALU_R(out, opA, opB, func, auxFunc);
+           |
+xmvlog: *W,RECOME (npc_lab4.v,268|11): recompiling design unit worklib.ALU_R:v.
+	First compiled from line 390 of template_lab4.v.
+xmvlog: *E,DUPUNI: Unit "worklib.ALU_R:v" multiply defined in files "template_lab4.v" and "npc_lab4.v".
+xmvlog: *E,MNPDEC: Module name (ALU_R) previously declared. Use -ALLOWREDEFINITION option for duplicate module names.
+module ALU_IR(out, opA, imm, func);
+            |
+xmvlog: *W,RECOME (npc_lab4.v,342|12): recompiling design unit worklib.ALU_IR:v.
+	First compiled from line 464 of template_lab4.v.
+xmvlog: *E,DUPUNI: Unit "worklib.ALU_IR:v" multiply defined in files "template_lab4.v" and "npc_lab4.v".
+xmvlog: *E,MNPDEC: Module name (ALU_IR) previously declared. Use -ALLOWREDEFINITION option for duplicate module names.
+module MEM_I(opA, imm, func, dataaddr, memsize, wren);
+           |
+xmvlog: *W,RECOME (npc_lab4.v,377|11): recompiling design unit worklib.MEM_I:v.
+	First compiled from line 499 of template_lab4.v.
+xmvlog: *E,DUPUNI: Unit "worklib.MEM_I:v" multiply defined in files "template_lab4.v" and "npc_lab4.v".
+xmvlog: *E,MNPDEC: Module name (MEM_I) previously declared. Use -ALLOWREDEFINITION option for duplicate module names.
+module MEM_S(datain, opA, opB, imm, func, dataaddr, memsize, wren);
+           |
+xmvlog: *W,RECOME (npc_lab4.v,400|11): recompiling design unit worklib.MEM_S:v.
+	First compiled from line 522 of template_lab4.v.
+xmvlog: *E,DUPUNI: Unit "worklib.MEM_S:v" multiply defined in files "template_lab4.v" and "npc_lab4.v".
+xmvlog: *E,MNPDEC: Module name (MEM_S) previously declared. Use -ALLOWREDEFINITION option for duplicate module names.
+module BRANCH(opA, opB, offset, func, pc, npc);
+            |
+xmvlog: *W,RECOME (npc_lab4.v,421|12): recompiling design unit worklib.BRANCH:v.
+	First compiled from line 543 of template_lab4.v.
+xmvlog: *E,DUPUNI: Unit "worklib.BRANCH:v" multiply defined in files "template_lab4.v" and "npc_lab4.v".
+xmvlog: *E,MNPDEC: Module name (BRANCH) previously declared. Use -ALLOWREDEFINITION option for duplicate module names.
+module JUMP(out, npc, pc, imm);
+          |
+xmvlog: *W,RECOME (npc_lab4.v,447|10): recompiling design unit worklib.JUMP:v.
+	First compiled from line 569 of template_lab4.v.
+xmvlog: *E,DUPUNI: Unit "worklib.JUMP:v" multiply defined in files "template_lab4.v" and "npc_lab4.v".
+xmvlog: *E,MNPDEC: Module name (JUMP) previously declared. Use -ALLOWREDEFINITION option for duplicate module names.
+module JALR(out, npc, pc, opA, imm);
+          |
+xmvlog: *W,RECOME (npc_lab4.v,455|10): recompiling design unit worklib.JALR:v.
+	First compiled from line 577 of template_lab4.v.
+xmvlog: *E,DUPUNI: Unit "worklib.JALR:v" multiply defined in files "template_lab4.v" and "npc_lab4.v".
+xmvlog: *E,MNPDEC: Module name (JALR) previously declared. Use -ALLOWREDEFINITION option for duplicate module names.
+module LUI(out, imm);
+         |
+xmvlog: *W,RECOME (npc_lab4.v,465|9): recompiling design unit worklib.LUI:v.
+	First compiled from line 587 of template_lab4.v.
+xmvlog: *E,DUPUNI: Unit "worklib.LUI:v" multiply defined in files "template_lab4.v" and "npc_lab4.v".
+xmvlog: *E,MNPDEC: Module name (LUI) previously declared. Use -ALLOWREDEFINITION option for duplicate module names.
+module AUIPC(out, imm, pc);
+           |
+xmvlog: *W,RECOME (npc_lab4.v,472|11): recompiling design unit worklib.AUIPC:v.
+	First compiled from line 594 of template_lab4.v.
+xmvlog: *E,DUPUNI: Unit "worklib.AUIPC:v" multiply defined in files "template_lab4.v" and "npc_lab4.v".
+xmvlog: *E,MNPDEC: Module name (AUIPC) previously declared. Use -ALLOWREDEFINITION option for duplicate module names.
+xrun: *E,VLGERR: An error occurred during parsing.  Review the log file for errors with the code *E and fix those identified problems to proceed.  Exiting with code (status 1).
+TOOL:	xrun(64)	18.09-s011: Exiting on Dec 03, 2025 at 15:22:59 CST  (total: 00:00:00)
